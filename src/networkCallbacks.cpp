@@ -72,8 +72,8 @@ void saveClient(WiFiEvent_t event, WiFiEventInfo_t info)
   Serial.println(" " + String(numberOfClients) + " connected client" + (numberOfClients > 1 ? "s" : ""));
 
   #ifdef ESP8266
-  sprintf(mac, "%02X%02X%02X%02X%02X%02X", event.mac[0], event.mac[1],\   //Convert the client's MAC to string
-  event.mac[2], event.mac[3], event.mac[4], event.mac[5]);
+  sprintf(mac, "%02X%02X%02X%02X%02X%02X", event.mac[0], event.mac[1],\
+  event.mac[2], event.mac[3], event.mac[4], event.mac[5]);    //Convert the client's MAC to string
   #else
   sprintf(mac, "%02X%02X%02X%02X%02X%02X", info.sta_connected.mac[0], info.sta_connected.mac[1],\
   info.sta_connected.mac[2], info.sta_connected.mac[3], info.sta_connected.mac[4], info.sta_connected.mac[5]);
